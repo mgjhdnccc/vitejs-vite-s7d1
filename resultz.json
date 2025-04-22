@@ -1,0 +1,194 @@
+{
+  "numTotalTestSuites": 1,
+  "numPassedTestSuites": 1,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 11,
+  "numPassedTests": 1,
+  "numFailedTests": 10,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "startTime": 1745249220310,
+  "success": false,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " Program hatasız bir şekilde çalışıyor",
+          "status": "passed",
+          "title": "Program hatasız bir şekilde çalışıyor",
+          "duration": 9,
+          "failureMessages": []
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " App.jsx'de 2 tane state tanımlanmış",
+          "status": "failed",
+          "title": "App.jsx'de 2 tane state tanımlanmış",
+          "duration": 6,
+          "failureMessages": [
+            "expected [ Array(1) ] to have a length of 3 but got 1"
+          ],
+          "location": {
+            "line": 31,
+            "column": 17
+          }
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " Kaydedilmiş filmler listesi için App.jsx başlangıç değeri [] olan bir state tanımlanmış",
+          "status": "failed",
+          "title": "Kaydedilmiş filmler listesi için App.jsx başlangıç değeri [] olan bir state tanımlanmış",
+          "duration": 2,
+          "failureMessages": [
+            "expected false to be true // Object.is equality"
+          ],
+          "location": {
+            "line": 35,
+            "column": 41
+          }
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " sahteVeri'deki movies, film listesi state'ine başlangıç değeri olarak tanımlanmış",
+          "status": "failed",
+          "title": "sahteVeri'deki movies, film listesi state'ine başlangıç değeri olarak tanımlanmış",
+          "duration": 1,
+          "failureMessages": [
+            "expected false to be true // Object.is equality"
+          ],
+          "location": {
+            "line": 39,
+            "column": 45
+          }
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " Ana sayfada tüm filmler listeleniyor",
+          "status": "failed",
+          "title": "Ana sayfada tüm filmler listeleniyor",
+          "duration": 4,
+          "failureMessages": [
+            "Unable to find an element with the text: /The Godfather/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"saved-list\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h3>\u001b[39m\n          \u001b[0mKaydedilen Filmler:\u001b[0m\n        \u001b[36m</h3>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"home-button\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mAnasayfa\u001b[0m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[0mBurayı kendi route'unuz ile değiştirin\u001b[0m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " App.jsx'de Switch kullanılmış",
+          "status": "failed",
+          "title": "App.jsx'de Switch kullanılmış",
+          "duration": 0,
+          "failureMessages": [
+            "expected false to be true // Object.is equality"
+          ],
+          "location": {
+            "line": 52,
+            "column": 36
+          }
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " App.jsx'de route'da exact kullanılmış",
+          "status": "failed",
+          "title": "App.jsx'de route'da exact kullanılmış",
+          "duration": 1,
+          "failureMessages": [
+            "expected false to be true // Object.is equality"
+          ],
+          "location": {
+            "line": 56,
+            "column": 33
+          }
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " filmler/:id route'u çalışıyor",
+          "status": "failed",
+          "title": "filmler/:id route'u çalışıyor",
+          "duration": 1,
+          "failureMessages": [
+            "Unable to find an element with the text: /The Godfather/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"saved-list\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h3>\u001b[39m\n          \u001b[0mKaydedilen Filmler:\u001b[0m\n        \u001b[36m</h3>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"home-button\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mAnasayfa\u001b[0m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[0mBurayı kendi route'unuz ile değiştirin\u001b[0m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " AnaSayfa butonu çalışıyor",
+          "status": "failed",
+          "title": "AnaSayfa butonu çalışıyor",
+          "duration": 1,
+          "failureMessages": [
+            "Unable to find an element with the text: /The Godfather/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"saved-list\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h3>\u001b[39m\n          \u001b[0mKaydedilen Filmler:\u001b[0m\n        \u001b[36m</h3>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"home-button\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mAnasayfa\u001b[0m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[0mBurayı kendi route'unuz ile değiştirin\u001b[0m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " Kaydet butonu çalışıyor",
+          "status": "failed",
+          "title": "Kaydet butonu çalışıyor",
+          "duration": 1,
+          "failureMessages": [
+            "Unable to find an element with the text: /The Godfather/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"saved-list\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h3>\u001b[39m\n          \u001b[0mKaydedilen Filmler:\u001b[0m\n        \u001b[36m</h3>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"home-button\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mAnasayfa\u001b[0m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[0mBurayı kendi route'unuz ile değiştirin\u001b[0m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        },
+        {
+          "ancestorTitles": [
+            ""
+          ],
+          "fullName": " Kaydet butonu aynı filmi 2. kez kaydetmiyor",
+          "status": "failed",
+          "title": "Kaydet butonu aynı filmi 2. kez kaydetmiyor",
+          "duration": 0,
+          "failureMessages": [
+            "Unable to find an element with the text: /The Godfather/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.\n\nIgnored nodes: comments, script, style\n\u001b[36m<body>\u001b[39m\n  \u001b[36m<div>\u001b[39m\n    \u001b[36m<div>\u001b[39m\n      \u001b[36m<div\u001b[39m\n        \u001b[33mclass\u001b[39m=\u001b[32m\"saved-list\"\u001b[39m\n      \u001b[36m>\u001b[39m\n        \u001b[36m<h3>\u001b[39m\n          \u001b[0mKaydedilen Filmler:\u001b[0m\n        \u001b[36m</h3>\u001b[39m\n        \u001b[36m<div\u001b[39m\n          \u001b[33mclass\u001b[39m=\u001b[32m\"home-button\"\u001b[39m\n        \u001b[36m>\u001b[39m\n          \u001b[0mAnasayfa\u001b[0m\n        \u001b[36m</div>\u001b[39m\n      \u001b[36m</div>\u001b[39m\n      \u001b[0mBurayı kendi route'unuz ile değiştirin\u001b[0m\n    \u001b[36m</div>\u001b[39m\n  \u001b[36m</div>\u001b[39m\n\u001b[36m</body>\u001b[39m"
+          ],
+          "location": {
+            "line": 37,
+            "column": 19
+          }
+        }
+      ],
+      "startTime": 1745249224076,
+      "endTime": 1745249224103,
+      "status": "failed",
+      "message": "",
+      "name": "/home/projects/vitejs-vite-1rb6dh/src/__tests__/App.test.jsx"
+    }
+  ]
+}
