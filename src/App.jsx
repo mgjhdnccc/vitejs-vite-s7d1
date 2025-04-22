@@ -9,8 +9,8 @@ import { movies } from './sahteVeri';
 export default function App() {
   const [filmListesi, setFilmListesi] = useState(movies);
   const [kaydedilenler, setKaydedilenler] = useState([]);
-  const [aramaTerimi, setAramaTerimi] = useState("");
 
+  
   const KaydedilenlerListesineEkle = (film) => {
     if (!kaydedilenler.find(item => item.id === film.id)) {
       setKaydedilenler([...kaydedilenler, film]);
@@ -24,10 +24,7 @@ export default function App() {
   return (
     <div>
       <KaydedilenlerListesi
-        filmListesi={filmListesi}
-        kaydedilenler={kaydedilenler}
-        aramaTerimi={aramaTerimi}
-         setAramaTerimi={setAramaTerimi}
+        list={kaydedilenler}
         addFn={KaydedilenlerListesineEkle}
         removeFn={KaydedilenlerdenSil}
       />
