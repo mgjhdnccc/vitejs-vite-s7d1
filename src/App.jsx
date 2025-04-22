@@ -9,8 +9,8 @@ import { movies } from './sahteVeri';
 export default function App() {
   const [filmListesi, setFilmListesi] = useState(movies);
   const [kaydedilenler, setKaydedilenler] = useState([]);
+  const [aramaTerimi, setAramaTerimi] = useState("");
 
-  
   const KaydedilenlerListesineEkle = (film) => {
     if (!kaydedilenler.find(item => item.id === film.id)) {
       setKaydedilenler([...kaydedilenler, film]);
@@ -31,7 +31,11 @@ export default function App() {
 
       <Switch>
         <Route exact path="/">
-          <FilmListesi films={filmListesi} />
+          <FilmListesi
+            films={filmListesi}
+            aramaTerimi={aramaTerimi}
+            setAramaTerimi={setAramaTerimi}
+          />
         </Route>
         <Route path="/filmler/:id">
           <Film saveFn={KaydedilenlerListesineEkle} />

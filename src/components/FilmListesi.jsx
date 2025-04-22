@@ -1,15 +1,39 @@
 import React from 'react';
-import FilmDetaylari from './FilmDetaylari.jsx';
-import { movies } from '../sahteVeri.js';
+import FilmDetaylari from './FilmDetaylari';
 
-export default function FilmListesi() {
-  
+export default function FilmListesi({ films, aramaTerimi, setAramaTerimi }) {
+  const handleSearch = (e) => {
+    setAramaTerimi(e.target.value.toLowerCase());
+  };
+
+  const filtrelenmisFilmler = films.filter((movie) => {
+    return (
+      movie.title.toLowerCase().includes(aramaTerimi) ||
+      movie.director.toLowerCase().includes(aramaTerimi) ||
+      String(movie.metascore).includes(aramaTerimi) ||
+      movie.stars.some(star => star.toLowerCase().includes(aramaTerimi))
+    );
+  });
+
   return (
-    <div className="movie-list">
-      {
-      movies &&
-      movies.map((movie) => (
-        <FilmDetaylari key={movie.id} movie={movie} />
+    <div className="film-listesi">
+      <input
+        type="text"
+        placeholder="Film, yönetmen, metascore, oyuncu ara..."
+        value={aramaTerimi}
+        onChange={handleSearch}
+        style={{
+          padding: '8px',
+          margin: '20px auto',
+          display: 'block',
+          width: '90%',
+          maxWidth: '400px',
+          fontSize: '1rem'
+        }}
+      />
+
+      {filtrelenmisFilmler.map((film) => (
+        <FilmDetaylari key={film.id} movie={film} />
       ))}
     </div>
   );
