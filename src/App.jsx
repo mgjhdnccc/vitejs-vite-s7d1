@@ -1,16 +1,9 @@
-import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { useState } from 'react';
-import KaydedilenlerListesi from './components/KaydedilenlerListesi';
-import FilmListesi from './components/FilmListesi';
-import Film from './components/Film';
-
-import { movies } from './sahteVeri';
-
+// ilgili yerler eklendi
 export default function App() {
-  
   const [filmListesi, setFilmListesi] = useState(movies);
-  const [kaydedilenler, setKaydedilenler] = useState([]); 
+  const [kaydedilenler, setKaydedilenler] = useState([]);
+  const [aramaTerimi, setAramaTerimi] = useState("");
+
   const KaydedilenlerListesineEkle = (film) => {
     if (!kaydedilenler.find(item => item.id === film.id)) {
       setKaydedilenler([...kaydedilenler, film]);
@@ -23,7 +16,15 @@ export default function App() {
 
   return (
     <div>
-      <KaydedilenlerListesi list={kaydedilenler} removeFn={KaydedilenlerdenSil} />
+      <KaydedilenlerListesi
+        aramaTerimi={aramaTerimi}
+        setAramaTerimi={setAramaTerimi}
+        filmListesi={filmListesi}
+        kaydedilenler={kaydedilenler}
+        addFn={KaydedilenlerListesineEkle}
+        removeFn={KaydedilenlerdenSil}
+      />
+
       <Switch>
         <Route exact path="/">
           <FilmListesi films={filmListesi} />
