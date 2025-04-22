@@ -10,9 +10,9 @@ export default function Film(props) {
   const { id } = useParams();
 
   useEffect(() => {
-    let theMovie = movies.find((movie) => movie.id == id); // '92' === jhfjh
+    let theMovie = movies.find((movie) => movie.id == id);
     setMovie(theMovie);
-  }, []);
+  }, [id]);  
 
   const handleSave = () => {
     saveFn(movie);
