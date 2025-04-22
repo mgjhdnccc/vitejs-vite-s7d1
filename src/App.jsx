@@ -1,4 +1,11 @@
-// ilgili yerler eklendi
+import React, { useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import KaydedilenlerListesi from './components/KaydedilenlerListesi';
+import FilmListesi from './components/FilmListesi';
+import Film from './components/Film';
+
+import { movies } from './sahteVeri';
+
 export default function App() {
   const [filmListesi, setFilmListesi] = useState(movies);
   const [kaydedilenler, setKaydedilenler] = useState([]);
@@ -17,10 +24,10 @@ export default function App() {
   return (
     <div>
       <KaydedilenlerListesi
-        aramaTerimi={aramaTerimi}
-        setAramaTerimi={setAramaTerimi}
         filmListesi={filmListesi}
         kaydedilenler={kaydedilenler}
+        aramaTerimi={aramaTerimi}
+         setAramaTerimi={setAramaTerimi}
         addFn={KaydedilenlerListesineEkle}
         removeFn={KaydedilenlerdenSil}
       />
