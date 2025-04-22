@@ -8,23 +8,22 @@ import Film from './components/Film';
 import { movies } from './sahteVeri';
 
 export default function App() {
-  // Görev 1: State tanımlamaları
+  
   const [filmListesi, setFilmListesi] = useState(movies);
-  const [kaydedilenler, setKaydedilenler] = useState([]);
-
-  // Görev 2: Kaydetme fonksiyonu
+  const [kaydedilenler, setKaydedilenler] = useState([]); 
   const KaydedilenlerListesineEkle = (film) => {
     if (!kaydedilenler.find(item => item.id === film.id)) {
       setKaydedilenler([...kaydedilenler, film]);
     }
   };
 
+  const KaydedilenlerdenSil = (filmId) => {
+    setKaydedilenler(kaydedilenler.filter(film => film.id !== filmId));
+  };
+
   return (
     <div>
-      {/* Kaydedilen filmler listesi */}
-      <KaydedilenlerListesi list={kaydedilenler} />
-
-      {/* Görev 3: Routing işlemleri */}
+      <KaydedilenlerListesi list={kaydedilenler} removeFn={KaydedilenlerdenSil} />
       <Switch>
         <Route exact path="/">
           <FilmListesi films={filmListesi} />

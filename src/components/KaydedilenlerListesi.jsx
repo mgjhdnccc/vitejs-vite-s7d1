@@ -8,10 +8,15 @@ export default function KaydedilenlerListesi(props) {
       {props.list.map((movie, index) => (
         <span key={index} className="saved-movie">
           {movie.title}
+          <button 
+            onClick={() => props.removeFn(movie.id)} 
+            style={{ marginLeft: '8px', cursor: 'pointer' }}
+          >
+            ❌
+          </button>
         </span>
       ))}
-      {/* Görev 4: Anasayfa butonu ana sayfayı açmalı */}
-      <Link to='/' ><div className="home-button">Anasayfa</div></Link>
+      <Link to='/'><div className="home-button">Anasayfa</div></Link>
     </div>
   );
 }
