@@ -1,23 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
-export default function FilmDetaylari({
-  movie,
-  liked,
-  toggleLike,
-  yorumlar = [], // 🛡️ Default değer tanımlandı
-  yorumEkle,
-  saveFn
-}) {
-  const [yeniYorum, setYeniYorum] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (yeniYorum.trim() === "") return;
-    yorumEkle(yeniYorum);
-    setYeniYorum("");
-  };
-
+export default function FilmDetaylari({ movie, liked, toggleLike, yorum, yorumGuncelle, saveFn }) {
   return (
     <div className="movie-card">
       <Link to={`/filmler/${movie.id}`} style={{ textDecoration: 'none', color: 'black' }}>
@@ -32,12 +16,9 @@ export default function FilmDetaylari({
       </div>
 
       <h3>Actors</h3>
-      {movie.stars &&
-        movie.stars.map((star) => (
-          <div key={star} className="movie-star">
-            {star}
-          </div>
-        ))}
+      {movie.stars && movie.stars.map((star) => (
+        <div key={star} className="movie-star">{star}</div>
+      ))}
 
       <button onClick={toggleLike} style={{ marginTop: '10px' }}>
         {liked ? "❤️ Unlike" : "🤍 Like"}
@@ -55,29 +36,14 @@ export default function FilmDetaylari({
         </button>
       )}
 
-      {/* Yorum Gönderme */}
-      <form onSubmit={handleSubmit} style={{ marginTop: '10px' }}>
-        <textarea
-          value={yeniYorum}
-          onChange={(e) => setYeniYorum(e.target.value)}
-          placeholder="Yorum yaz..."
-          rows={3}
-          style={{ width: '100%', padding: '6px', resize: 'none' }}
-        />
-        <button type="submit" style={{ marginTop: '5px' }}>Gönder</button>
-      </form>
-
-      {/* Yorumları Listele */}
-      {Array.isArray(yorumlar) && yorumlar.length > 0 && (
-        <div style={{ marginTop: '10px' }}>
-          <strong>Yorumlar:</strong>
-          <ul>
-            {yorumlar.map((yorum, i) => (
-              <li key={i}>{yorum}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {/* Tek yorum alanı */}
+      <textarea
+        value={yorum}
+        onChange={(e) => yorumGuncelle(e.target.value)}
+        placeholder="Yorum yaz..."
+        rows={3}
+        style={{ width: '100%', padding: '6px', marginTop: '10px', resize: 'none' }}
+      />
     </div>
   );
 }

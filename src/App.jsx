@@ -9,34 +9,28 @@ export default function App() {
   const [filmListesi, setFilmListesi] = useState(movies);
   const [aramaTerimi, setAramaTerimi] = useState("");
 
-  
   const [kaydedilenler, setKaydedilenler] = useState(() => {
     const stored = localStorage.getItem("kaydedilenler");
     return stored ? JSON.parse(stored) : [];
   });
-
 
   const [likes, setLikes] = useState(() => {
     const stored = localStorage.getItem("likes");
     return stored ? JSON.parse(stored) : {};
   });
 
-
   const [comments, setComments] = useState(() => {
     const stored = localStorage.getItem("comments");
     return stored ? JSON.parse(stored) : {};
   });
 
-
   useEffect(() => {
     localStorage.setItem("kaydedilenler", JSON.stringify(kaydedilenler));
   }, [kaydedilenler]);
 
-
   useEffect(() => {
     localStorage.setItem("likes", JSON.stringify(likes));
   }, [likes]);
-
 
   useEffect(() => {
     localStorage.setItem("comments", JSON.stringify(comments));
@@ -50,15 +44,6 @@ export default function App() {
 
   const KaydedilenlerdenSil = (filmId) => {
     setKaydedilenler(kaydedilenler.filter(film => film.id !== filmId));
-  };
-
-  const yorumEkle = (filmId, text) => {
-    const mevcut = comments[filmId] || [];
-    const guncel = [...mevcut, text];
-    setComments({
-      ...comments,
-      [filmId]: guncel
-    });
   };
 
   return (
@@ -88,7 +73,7 @@ export default function App() {
             likes={likes}
             setLikes={setLikes}
             comments={comments}
-            yorumEkle={yorumEkle}
+            setComments={setComments}
           />
         </Route>
       </Switch>
