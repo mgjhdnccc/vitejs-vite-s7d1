@@ -37,6 +37,7 @@ export default function Film({ saveFn, likes, setLikes, comments, setComments })
         toggleLike={toggleLike}
         yorum={comments[movie.id] || ""}
         yorumGuncelle={yorumGuncelle}
+        saveFn={() => saveFn(movie)} // 👈 Kaydet butonunun görünmesi için eklendi
       />
     </div>
   );
