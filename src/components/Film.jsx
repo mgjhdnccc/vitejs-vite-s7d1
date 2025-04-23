@@ -1,55 +1,43 @@
 import React, { useState, useEffect } from 'react';
 import { movies } from '../sahteVeri';
 import { useParams } from 'react-router-dom/cjs/react-router-dom';
+import FilmDetaylari from './FilmDetaylari';
 
-export default function Film(props) {
+export default function Film({ saveFn, likes, setLikes, comments, setComments }) {
   const [movie, setMovie] = useState();
-  const { saveFn } = props;
-  // burdan mi alicaz kaydedilenler satatini ve gerekli fonksiyonlari
-  /* Görev 5: Film component'i yüklendiğinde id'yi params'dan almalı ve sahteVeri'deki movies içinden ilgili id'li filmi bulup getirmeli */
+  
   const { id } = useParams();
 
   useEffect(() => {
-    let theMovie = movies.find((movie) => movie.id == id);
+    const theMovie = movies.find((m) => m.id === Number(id));
     setMovie(theMovie);
-  }, [id]);  
+  }, [id]);
 
-  const handleSave = () => {
-    saveFn(movie);
-  }
-  
-  if (!movie) {
-    return <div>Film bilgisi yükleniyor...</div>;
-  }
-  
-  const { title, director, metascore, stars } = movie;
+  if (!movie) return <div>Film bilgisi yükleniyor...</div>;
+
+  const toggleLike = () => {
+    setLikes({
+      ...likes,
+      [movie.id]: !likes[movie.id]
+    });
+  };
+
+  const yorumGuncelle = (text) => {
+    setComments({
+      ...comments,
+      [movie.id]: text
+    });
+  };
 
   return (
-    movie && 
-      <div className="save-wrapper">
-      <div className="movie-card">
-        <p>Film ID: {id}</p>
-        <h2>{title}</h2>
-        <div className="movie-director">
-          Director: <em>{director}</em>
-        </div>
-        <div className="movie-metascore">
-          Metascore: <strong>{metascore}</strong>
-        </div>
-        <h3>Actors</h3>
-
-        {stars &&
-        stars.map((star) => (
-          <div key={star} className="movie-star">
-            {star}
-          </div>
-        ))}
-      </div>
-      {/* Görev 6: kaydet butonu kaydedilenler state'ine filmi eklemeli */}
-      <div className="save-button" onClick={handleSave}>Kaydet</div>
-      </div>
-   
-    
-   
+    <div>
+      <FilmDetaylari
+        movie={movie}
+        liked={likes[movie.id]}
+        toggleLike={toggleLike}
+        yorum={comments[movie.id] || ""}
+        yorumGuncelle={yorumGuncelle}
+      />
+    </div>
   );
 }

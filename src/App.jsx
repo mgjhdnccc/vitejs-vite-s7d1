@@ -60,11 +60,18 @@ export default function App() {
           />
         </Route>
         <Route path="/filmler/:id">
-          <Film saveFn={KaydedilenlerListesineEkle} />
+          <Film
+            saveFn={KaydedilenlerListesineEkle}
+            likes={likes}
+            setLikes={setLikes}
+            comments={comments}
+            setComments={setComments}
+          />
         </Route>
       </Switch>
     </div>
   );
 }
+
 
 // https://v5.reactrouter.com/web/example/url-params
