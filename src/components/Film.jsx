@@ -3,7 +3,7 @@ import { movies } from '../sahteVeri';
 import { useParams } from 'react-router-dom/cjs/react-router-dom';
 import FilmDetaylari from './FilmDetaylari';
 
-export default function Film({ saveFn, likes, setLikes, comments, setComments }) {
+export default function Film({ saveFn, likes, setLikes, comments, yorumEkle }) {
   const [movie, setMovie] = useState();
   
   const { id } = useParams();
@@ -22,22 +22,16 @@ export default function Film({ saveFn, likes, setLikes, comments, setComments })
     });
   };
 
-  const yorumGuncelle = (text) => {
-    setComments({
-      ...comments,
-      [movie.id]: text
-    });
-  };
-
+  
   return (
     <div>
       <FilmDetaylari
         movie={movie}
         liked={likes[movie.id]}
         toggleLike={toggleLike}
-        yorum={comments[movie.id] || ""}
-        yorumGuncelle={yorumGuncelle}
-        saveFn={() => saveFn(movie)} // 👈 Kaydet butonunun görünmesi için eklendi
+        yorumlar={comments[movie.id] || []}
+        yorumEkle={(text) => yorumEkle(movie.id, text)}
+        saveFn={() => saveFn(movie)}
       />
     </div>
   );
