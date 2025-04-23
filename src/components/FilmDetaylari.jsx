@@ -18,7 +18,7 @@ export default function FilmDetaylari({
   };
 
   const handleDelete = () => {
-    yorumGuncelle(""); // yorum tamamen silinir
+    yorumGuncelle("");
     setDuzenlenenYorum("");
     setEditMode(false);
   };
@@ -63,18 +63,16 @@ export default function FilmDetaylari({
         {!editMode ? (
           <>
             <p style={{ whiteSpace: 'pre-wrap' }}>{yorum || <em>Henüz yorum yazılmadı.</em>}</p>
+            <button onClick={() => {
+              setDuzenlenenYorum(yorum || "");
+              setEditMode(true);
+            }}>
+              {yorum ? "✏️ Düzenle" : "📝 Yorum Yaz"}
+            </button>
             {yorum && (
-              <>
-                <button onClick={() => {
-                  setDuzenlenenYorum(yorum);
-                  setEditMode(true);
-                }}>
-                  ✏️ Düzenle
-                </button>
-                <button onClick={handleDelete} style={{ marginLeft: '10px' }}>
-                  🗑️ Sil
-                </button>
-              </>
+              <button onClick={handleDelete} style={{ marginLeft: '10px' }}>
+                🗑️ Sil
+              </button>
             )}
           </>
         ) : (
