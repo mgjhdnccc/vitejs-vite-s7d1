@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
-export default function FilmDetaylari({ movie, liked, toggleLike, yorumlar, yorumEkle, saveFn }) {
+export default function FilmDetaylari({
+  movie,
+  liked,
+  toggleLike,
+  yorumlar = [], // 🛡️ Default değer tanımlandı
+  yorumEkle,
+  saveFn
+}) {
   const [yeniYorum, setYeniYorum] = useState("");
 
   const handleSubmit = (e) => {
@@ -32,11 +39,9 @@ export default function FilmDetaylari({ movie, liked, toggleLike, yorumlar, yoru
           </div>
         ))}
 
-
       <button onClick={toggleLike} style={{ marginTop: '10px' }}>
         {liked ? "❤️ Unlike" : "🤍 Like"}
       </button>
-
 
       {saveFn && (
         <button
@@ -50,7 +55,7 @@ export default function FilmDetaylari({ movie, liked, toggleLike, yorumlar, yoru
         </button>
       )}
 
-      {/* Yorum Ekleme */}
+      {/* Yorum Gönderme */}
       <form onSubmit={handleSubmit} style={{ marginTop: '10px' }}>
         <textarea
           value={yeniYorum}
@@ -63,7 +68,7 @@ export default function FilmDetaylari({ movie, liked, toggleLike, yorumlar, yoru
       </form>
 
       {/* Yorumları Listele */}
-      {yorumlar.length > 0 && (
+      {Array.isArray(yorumlar) && yorumlar.length > 0 && (
         <div style={{ marginTop: '10px' }}>
           <strong>Yorumlar:</strong>
           <ul>
