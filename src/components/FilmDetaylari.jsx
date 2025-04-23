@@ -1,7 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
-export default function FilmDetaylari({ movie, liked, toggleLike, yorum, yorumGuncelle, saveFn }) {
+export default function FilmDetaylari({
+  movie,
+  liked,
+  toggleLike,
+  yorum,
+  yorumGuncelle,
+  saveFn
+}) {
+  const [editMode, setEditMode] = useState(false);
+  const [duzenlenenYorum, setDuzenlenenYorum] = useState(yorum || "");
+
+  const handleEditSave = () => {
+    yorumGuncelle(duzenlenenYorum);
+    setEditMode(false);
+  };
+
+  const handleDelete = () => {
+    yorumGuncelle(""); // yorum tamamen silinir
+    setDuzenlenenYorum("");
+    setEditMode(false);
+  };
+
   return (
     <div className="movie-card">
       <Link to={`/filmler/${movie.id}`} style={{ textDecoration: 'none', color: 'black' }}>
@@ -36,14 +57,43 @@ export default function FilmDetaylari({ movie, liked, toggleLike, yorum, yorumGu
         </button>
       )}
 
-      {/* Tek yorum alanı */}
-      <textarea
-        value={yorum}
-        onChange={(e) => yorumGuncelle(e.target.value)}
-        placeholder="Yorum yaz..."
-        rows={3}
-        style={{ width: '100%', padding: '6px', marginTop: '10px', resize: 'none' }}
-      />
+      {/* Yorum alanı */}
+      <div style={{ marginTop: '15px' }}>
+        <strong>Yorum:</strong>
+        {!editMode ? (
+          <>
+            <p style={{ whiteSpace: 'pre-wrap' }}>{yorum || <em>Henüz yorum yazılmadı.</em>}</p>
+            {yorum && (
+              <>
+                <button onClick={() => {
+                  setDuzenlenenYorum(yorum);
+                  setEditMode(true);
+                }}>
+                  ✏️ Düzenle
+                </button>
+                <button onClick={handleDelete} style={{ marginLeft: '10px' }}>
+                  🗑️ Sil
+                </button>
+              </>
+            )}
+          </>
+        ) : (
+          <>
+            <textarea
+              value={duzenlenenYorum}
+              onChange={(e) => setDuzenlenenYorum(e.target.value)}
+              rows={3}
+              style={{ width: '100%', padding: '6px', resize: 'none' }}
+            />
+            <div style={{ marginTop: '5px' }}>
+              <button onClick={handleEditSave}>💾 Kaydet</button>
+              <button onClick={() => setEditMode(false)} style={{ marginLeft: '10px' }}>
+                ❌ Vazgeç
+              </button>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }
