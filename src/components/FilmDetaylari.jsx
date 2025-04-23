@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
-export default function FilmDetaylari({ movie, liked, toggleLike, yorum, yorumGuncelle }) {
+export default function FilmDetaylari({ movie, liked, toggleLike, yorum, yorumGuncelle, saveFn }) {
   const { id, title, director, metascore, stars } = movie;
 
   return (
@@ -28,6 +28,19 @@ export default function FilmDetaylari({ movie, liked, toggleLike, yorum, yorumGu
       <button onClick={toggleLike} style={{ marginTop: '10px' }}>
         {liked ? "❤️ Unlike" : "🤍 Like"}
       </button>
+
+      {/* Kaydet Butonu (saveFn varsa) */}
+      {saveFn && (
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            saveFn();
+          }}
+          style={{ marginTop: '10px', marginLeft: '10px' }}
+        >
+          📌 Kaydet
+        </button>
+      )}
 
       {/* Yorum Alanı */}
       <textarea

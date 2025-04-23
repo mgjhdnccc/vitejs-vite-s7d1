@@ -57,6 +57,7 @@ export default function App() {
             setLikes={setLikes}
             comments={comments}
             setComments={setComments}
+            saveFn={KaydedilenlerListesineEkle} 
           />
         </Route>
         <Route path="/filmler/:id">

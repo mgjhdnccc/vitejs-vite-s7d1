@@ -8,7 +8,8 @@ export default function FilmListesi({
   likes,
   setLikes,
   comments,
-  setComments
+  setComments,
+  saveFn // 👈 App'ten gelen prop
 }) {
   const handleSearch = (e) => {
     setAramaTerimi(e.target.value.toLowerCase());
@@ -62,6 +63,7 @@ export default function FilmListesi({
           toggleLike={() => toggleLike(film.id)}
           yorum={comments[film.id] || ""}
           yorumGuncelle={(text) => yorumGuncelle(film.id, text)}
+          saveFn={() => saveFn(film)} // 👈 Kaydet fonksiyonu prop olarak verildi
         />
       ))}
     </div>
