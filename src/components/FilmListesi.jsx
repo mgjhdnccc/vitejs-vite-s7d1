@@ -1,7 +1,15 @@
 import React from 'react';
 import FilmDetaylari from './FilmDetaylari';
 
-export default function FilmListesi({ films, aramaTerimi, setAramaTerimi }) {
+export default function FilmListesi({
+  films,
+  aramaTerimi,
+  setAramaTerimi,
+  likes,
+  setLikes,
+  comments,
+  setComments
+}) {
   const handleSearch = (e) => {
     setAramaTerimi(e.target.value.toLowerCase());
   };
@@ -14,6 +22,20 @@ export default function FilmListesi({ films, aramaTerimi, setAramaTerimi }) {
       movie.stars.some(star => star.toLowerCase().includes(aramaTerimi))
     );
   });
+
+  const toggleLike = (id) => {
+    setLikes({
+      ...likes,
+      [id]: !likes[id]
+    });
+  };
+
+  const yorumGuncelle = (id, text) => {
+    setComments({
+      ...comments,
+      [id]: text
+    });
+  };
 
   return (
     <div className="film-listesi">
@@ -33,7 +55,14 @@ export default function FilmListesi({ films, aramaTerimi, setAramaTerimi }) {
       />
 
       {filtrelenmisFilmler.map((film) => (
-        <FilmDetaylari key={film.id} movie={film} />
+        <FilmDetaylari
+          key={film.id}
+          movie={film}
+          liked={likes[film.id]}
+          toggleLike={() => toggleLike(film.id)}
+          yorum={comments[film.id] || ""}
+          yorumGuncelle={(text) => yorumGuncelle(film.id, text)}
+        />
       ))}
     </div>
   );
