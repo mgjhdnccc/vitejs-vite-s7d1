@@ -2,9 +2,30 @@ import React from 'react';
 
 export default function KaydedilenlerListesi({ list, addFn, removeFn }) {
   return (
-    <div className="saved-list">
-      <h3>Kaydedilen Filmler</h3>
-      <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+    <div className="saved-list" style={{
+      display: 'flex',
+      flexDirection: 'column',
+      height: '100%'
+    }}>
+      {/* Sabit başlık */}
+      <div style={{
+        flexShrink: 0,
+        backgroundColor: '#f9f9f9',
+        borderBottom: '1px solid #ddd',
+        paddingBottom: '8px',
+        marginBottom: '8px'
+      }}>
+        <h3>Kaydedilen Filmler</h3>
+      </div>
+
+      {/* Kaydırılabilir film listesi */}
+      <div style={{
+        overflowY: 'auto',
+        flexGrow: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '8px'
+      }}>
         {list.length === 0 ? (
           <p>Henüz film kaydedilmedi.</p>
         ) : (
