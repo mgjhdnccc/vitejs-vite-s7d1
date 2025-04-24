@@ -4,17 +4,14 @@ import FilmDetaylari from './FilmDetaylari';
 export default function FilmListesi({
   films,
   aramaTerimi,
-  setAramaTerimi,
+  
   likes,
   setLikes,
   comments,
   setComments,
-  saveFn // 👈 App'ten gelen prop
-}) {
-  const handleSearch = (e) => {
-    setAramaTerimi(e.target.value.toLowerCase());
-  };
-
+  saveFn
+}) 
+{
   const filtrelenmisFilmler = films.filter((movie) => {
     return (
       movie.title.toLowerCase().includes(aramaTerimi) ||
@@ -40,21 +37,7 @@ export default function FilmListesi({
 
   return (
     <div className="film-listesi">
-      <input
-        type="text"
-        placeholder="Film, yönetmen, metascore, oyuncu ara..."
-        value={aramaTerimi}
-        onChange={handleSearch}
-        style={{
-          padding: '8px',
-          margin: '20px auto',
-          display: 'block',
-          width: '90%',
-          maxWidth: '400px',
-          fontSize: '1rem'
-        }}
-      />
-
+      
       {filtrelenmisFilmler.map((film) => (
         <FilmDetaylari
           key={film.id}
@@ -63,7 +46,7 @@ export default function FilmListesi({
           toggleLike={() => toggleLike(film.id)}
           yorum={comments[film.id] || ""}
           yorumGuncelle={(text) => yorumGuncelle(film.id, text)}
-          saveFn={() => saveFn(film)} // 👈 Kaydet fonksiyonu prop olarak verildi
+          saveFn={() => saveFn(film)}
         />
       ))}
     </div>
