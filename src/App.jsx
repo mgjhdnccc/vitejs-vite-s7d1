@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import KaydedilenlerListesi from './components/KaydedilenlerListesi';
 import FilmListesi from './components/FilmListesi';
 import Film from './components/Film';
+import Layout from './components/Layout';
 import { movies } from './sahteVeri';
 
 export default function App() {
@@ -47,15 +47,33 @@ export default function App() {
   };
 
   return (
-    <div>
-      <KaydedilenlerListesi
-        list={kaydedilenler}
-        addFn={KaydedilenlerListesineEkle}
-        removeFn={KaydedilenlerdenSil}
-      />
+    <Switch>
+      <Route path="/filmler/:id">
+        <Layout
+          kaydedilenler={kaydedilenler}
+          addFn={KaydedilenlerListesineEkle}
+          removeFn={KaydedilenlerdenSil}
+          aramaTerimi={aramaTerimi}
+          setAramaTerimi={setAramaTerimi}
+        >
+          <Film
+            saveFn={KaydedilenlerListesineEkle}
+            likes={likes}
+            setLikes={setLikes}
+            comments={comments}
+            setComments={setComments}
+          />
+        </Layout>
+      </Route>
 
-      <Switch>
-        <Route exact path="/">
+      <Route exact path="/">
+        <Layout
+          kaydedilenler={kaydedilenler}
+          addFn={KaydedilenlerListesineEkle}
+          removeFn={KaydedilenlerdenSil}
+          aramaTerimi={aramaTerimi}
+          setAramaTerimi={setAramaTerimi}
+        >
           <FilmListesi
             films={filmListesi}
             aramaTerimi={aramaTerimi}
@@ -66,18 +84,9 @@ export default function App() {
             setComments={setComments}
             saveFn={KaydedilenlerListesineEkle}
           />
-        </Route>
-        <Route path="/filmler/:id">
-          <Film
-            saveFn={KaydedilenlerListesineEkle}
-            likes={likes}
-            setLikes={setLikes}
-            comments={comments}
-            setComments={setComments}
-          />
-        </Route>
-      </Switch>
-    </div>
+        </Layout>
+      </Route>
+    </Switch>
   );
 }
 
