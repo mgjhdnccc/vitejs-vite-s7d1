@@ -7,7 +7,7 @@ export default function KaydedilenlerListesi({ list, addFn, removeFn }) {
       flexDirection: 'column',
       height: '100%'
     }}>
-      {/* Sabit başlık */}
+      {/* Sabit başlık + sayacı */}
       <div style={{
         flexShrink: 0,
         backgroundColor: '#f9f9f9',
@@ -15,7 +15,7 @@ export default function KaydedilenlerListesi({ list, addFn, removeFn }) {
         paddingBottom: '8px',
         marginBottom: '8px'
       }}>
-        <h3>Kaydedilen Filmler</h3>
+        <h3>Kaydedilen Filmler ({list.length})</h3>
       </div>
 
       {/* Kaydırılabilir film listesi */}
