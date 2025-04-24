@@ -13,7 +13,7 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    
+
   }
   
   /* Soldaki ana içerik (film kartları) */
@@ -51,6 +51,14 @@
     color: #333;
   }
   
-  .nav-links span {
+  .nav-links a, .nav-links span {
     cursor: pointer;
-  }  
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .nav-links a:hover,
+  .nav-links span:hover {
+    color: #007acc;
+  }
+  

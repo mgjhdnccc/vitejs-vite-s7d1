@@ -1,6 +1,7 @@
 import React from "react";
 import KaydedilenlerListesi from "./KaydedilenlerListesi";
 import "./Layout.css";
+import { Link } from 'react-router-dom';
 
 export default function Layout({
   children,
@@ -20,9 +21,10 @@ export default function Layout({
           onChange={(e) => setAramaTerimi(e.target.value.toLowerCase())}
         />
         <nav className="nav-links">
-          <span>Hakkımızda</span>
-          <span>İletişim</span>
-          <span>SSS</span>
+            <Link to="/">Anasayfa</Link>
+            <span>Hakkımızda</span>
+            <span>İletişim</span>
+            <span>SSS</span>
         </nav>
       </header>
 
