@@ -32,11 +32,11 @@ a:hover {
 }
 
 .saved-list {
-  background: linear-gradient(135deg, #dbeeff, #f0f6ff);
+  /*background: linear-gradient(135deg, #dbeeff, #f0f6ff);*/
   border: 1px solid #b3d0fd;
   box-shadow: 0 0 4px rgba(79, 156, 232, 0.2);
   padding: 1rem;
-
+  
   position: relative;
   margin: 1rem auto;
   width: 75%;
