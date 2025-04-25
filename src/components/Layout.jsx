@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import KaydedilenlerListesi from "./KaydedilenlerListesi";
-import Input from "./Input"; // Özel tasarımlı arama kutusu
+import Input from "./Input"; // Yeni şık ve sade arama kutusu bileşeni
 import "./Layout.css";
-
 
 export default function Layout({
   children,
@@ -15,7 +14,7 @@ export default function Layout({
 }) {
   return (
     <>
-      {/* Üst menü */}
+      {/* Üst navigasyon ve arama kutusu */}
       <header className="header">
         <Input
           value={aramaTerimi}
@@ -30,7 +29,7 @@ export default function Layout({
         </nav>
       </header>
 
-      {/* Sayfa 2 sütunlu yapı */}
+      {/* 2 sütunlu yapı: sol film alanı, sağ sidebar */}
       <div className="app-wrapper">
         <div className="main-content">{children}</div>
         <div className="sidebar">
