@@ -1,64 +1,52 @@
 /* Sayfa 2 sütuna bölünüyor */
 .app-wrapper {
-    display: flex;
-    height: calc(100vh - 60px); /* header yüksekliği kadar çıkar */
-  }
-  
-  /* Sağdaki sabit dikey panel */
-  .sidebar {
-    width: 20%;
-    background-color: #f9f9f9;
-    padding: 16px;
-    border-left: 1px solid #ddd;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  height: calc(100vh - 60px);
+}
 
-  }
-  
-  /* Soldaki ana içerik (film kartları) */
-  .main-content {
-    width: 80%;
-    padding: 24px;
-    background-color: #fff;
-    overflow-y: auto;
-  }
-  
-  /* Üstteki arama + menü */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 24px;
-    background-color: #f0f0f0;
-    height: 60px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  }
-  
-   /* .header input[type="text"] {
-    width: 40%;
-    padding: 6px 12px;
-    font-size: 1rem;
-    border-radius: 6px;
-    border: 1px solid #ccc;
-  } */
-  
-  .nav-links {
-    display: flex;
-    gap: 20px;
-    font-weight: bold;
-    font-size: 0.95rem;
-    color: #333;
-  }
-  
-  .nav-links a, .nav-links span {
-    cursor: pointer;
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .nav-links a:hover,
-  .nav-links span:hover {
-    color: #007acc;
-  }
+.sidebar {
+  width: 20%;
+  background-color: #f9f9f9;
+  padding: 16px;
+  border-left: 1px solid #b3d0fd;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  width: 80%;
+  padding: 24px;
+  background-color: #fff;
+  overflow-y: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #dbeeff, #f0f6ff);
+  height: 60px;
+  box-shadow: 0 2px 5px rgba(132, 190, 255, 0.2);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  color: #4e89ff;
+}
+
+.nav-links a, .nav-links span {
+  cursor: pointer;
+  text-decoration: none;
+  color: #4e89ff;
+}
+
+.nav-links a:hover,
+.nav-links span:hover {
+  color: #3a6edb;
+}
   
