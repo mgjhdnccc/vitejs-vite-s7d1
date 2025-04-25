@@ -44,10 +44,11 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 12px;
+  border-radius: 25px;
 }
 
 .saved-list h3 {
+  text-align: center;
   margin-right: 10px;
   color: #4e89ff;
 }
