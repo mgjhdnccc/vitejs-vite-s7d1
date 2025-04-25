@@ -10,7 +10,7 @@ export default function KaydedilenlerListesi({ list, addFn, removeFn }) {
       {/* Sabit başlık + sayacı */}
       <div style={{
         flexShrink: 0,
-        backgroundColor: '#f9f9f9',
+        backgroundColor: '#dbeeff', // Değiştirildi
         borderBottom: '1px solid #ddd',
         paddingBottom: '8px',
         marginBottom: '8px'
