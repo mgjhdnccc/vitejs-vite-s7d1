@@ -6,12 +6,13 @@
 
 .sidebar {
   width: 20%;
-  background-color: #f9f9f9;
+  background-color: #b3d0fd; /* koyu mavi */
   padding: 16px;
-  border-left: 1px solid #b3d0fd;
+  border-left: 1px solid #a4caf8;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
+  border-top-left-radius: 12px;
 }
 
 .main-content {

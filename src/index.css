@@ -6,15 +6,16 @@ body {
 }
 
 .movie-card {
-  background-color: #fff;
+  background-color: #b3d0fd; /* yeni arka plan */
   border: 0;
-  box-shadow: 0 -1px 0 #b3d0fd, 0 0 2px rgba(79, 156, 232, 0.2),
-    0 2px 6px rgba(79, 156, 232, 0.4);
+  box-shadow: 0 -1px 0 #91b8f5, 0 0 2px rgba(0, 0, 0, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.15);
   padding: 1rem;
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
   border-radius: 12px;
+  color: #0a2c5f; /* içerik kontrastı için koyu mavi metin */
 }
 
 a {
@@ -36,7 +37,7 @@ a:hover {
   border: 1px solid #b3d0fd;
   box-shadow: 0 0 4px rgba(79, 156, 232, 0.2);
   padding: 1rem;
-  
+
   position: relative;
   margin: 1rem auto;
   width: 75%;
