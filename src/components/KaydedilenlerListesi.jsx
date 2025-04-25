@@ -55,7 +55,7 @@ export default function KaydedilenlerListesi({ list, addFn, removeFn }) {
                   cursor: "pointer",
                 }}
               >
-                ❌
+                🗑️
               </button>
             </div>
           ))
