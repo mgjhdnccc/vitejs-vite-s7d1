@@ -7,7 +7,7 @@ body {
 
 .movie-card {
   display: flex;
-  border: 0;
+  border: 2px solid #b3d0fd;
   box-shadow: 0 -1px #e0e0e0, 0 0 2px #0000001f, 0 2px 4px #0000003d;
   padding: 1rem;
   cursor: pointer;
