@@ -38,7 +38,7 @@ const Wrapper = styled.div`
     border: none;
     background: linear-gradient(135deg, #dae8f7, #d6e5f7);
     padding: 12px 16px;
-    
+    border-radius: 1000px;
     font-size: 18px;
     color: #4e89ff;
   }
