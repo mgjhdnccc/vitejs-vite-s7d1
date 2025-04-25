@@ -1,9 +1,9 @@
-/* Sayfa 2 sütuna bölünüyor */
 .app-wrapper {
   display: flex;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 60px); /* header yüksekliği kadar çıkar */
 }
 
+/* Sağdaki sabit dikey panel */
 .sidebar {
   width: 20%;
   background: linear-gradient(135deg, rgb(218, 232, 247), rgb(214, 229, 247));
@@ -12,9 +12,9 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  
 }
 
+/* Soldaki ana içerik (film kartları) */
 .main-content {
   width: 80%;
   padding: 24px;
@@ -22,32 +22,33 @@
   overflow-y: auto;
 }
 
+/* Üstteki arama kutusu ve menü */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
-  background: 'linear-gradient(135deg, rgb(218, 232, 247), rgb(214, 229, 247))';
+  background: linear-gradient(135deg, #dbeeff, #f0f6ff);
   height: 60px;
   box-shadow: 0 2px 5px rgba(132, 190, 255, 0.2);
 }
 
+/* Navigasyon linkleri */
 .nav-links {
   display: flex;
   gap: 20px;
   font-weight: bold;
   font-size: 0.95rem;
-  color: #4e89ff;
+  color: #000; /* Tüm linkler ve span'lar siyah */
 }
 
 .nav-links a, .nav-links span {
   cursor: pointer;
   text-decoration: none;
-  color: #4e89ff;
+  color: #000; /* Başlangıçta siyah */
 }
 
 .nav-links a:hover,
 .nav-links span:hover {
-  color: #3a6edb;
+  color: #4e89ff; /* Üzerine gelince mavi */
 }
-  
