@@ -9,13 +9,13 @@ export default function KaydedilenlerListesi({ list, addFn, removeFn }) {
     }}>
       {/* Sabit başlık + sayacı */}
       <div style={{
-        flexShrink: 0,
-        background: 'linear-gradient(135deg, #dbeeff, #f0f6ff)',
-        borderBottom: '1px solid #ddd',
-        paddingBottom: '8px',
-        marginBottom: '8px'
-      }}>
-        <h3>Kaydedilen Filmler ({list.length})</h3>
+          flexShrink: 0,
+          background: 'linear-gradient(135deg, rgb(218, 232, 247), rgb(214, 229, 247))',
+          borderBottom: '1px solid #ddd',
+          paddingBottom: '8px',
+          marginBottom: '8px'
+        }}>
+          <h3>Kaydedilen Filmler ({list.length})</h3>
       </div>
 
       {/* Kaydırılabilir film listesi */}
@@ -37,7 +37,7 @@ export default function KaydedilenlerListesi({ list, addFn, removeFn }) {
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                background: "#fff",
+                background: "linear-gradient(135deg, rgb(218, 232, 247), rgb(214, 229, 247))",
                 padding: "8px 12px",
                 border: "1px solid #ddd",
                 borderRadius: "6px",

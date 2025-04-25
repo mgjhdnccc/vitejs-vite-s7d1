@@ -6,19 +6,19 @@
 
 .sidebar {
   width: 20%;
-  background-color: #f9f9f9;
+  background: linear-gradient(135deg, rgb(218, 232, 247), rgb(214, 229, 247));
   padding: 16px;
-  border-left: 1px solid #ddd;
+  border-left: 1px solid #b3d0fd;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-
+  
 }
 
 .main-content {
   width: 80%;
   padding: 24px;
-  background: linear-gradient(135deg, #dbeeff, #f0f6ff); /* eklendi */
+  background: linear-gradient(135deg, rgb(218, 232, 247), rgb(214, 229, 247));
   overflow-y: auto;
 }
 
