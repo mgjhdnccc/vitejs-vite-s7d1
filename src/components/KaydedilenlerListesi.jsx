@@ -11,7 +11,7 @@ export default function KaydedilenlerListesi({ list, addFn, removeFn }) {
       <div style={{
           flexShrink: 0,
           background: 'linear-gradient(135deg, rgb(218, 232, 247), rgb(214, 229, 247))',
-          borderBottom: '1px solid #ddd',
+          /*borderBottom: '1px solid #ddd',*/
           paddingBottom: '8px',
           marginBottom: '8px'
         }}>
