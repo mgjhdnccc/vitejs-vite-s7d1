@@ -67,7 +67,7 @@ export default function FilmDetaylari({
               setDuzenlenenYorum(yorum || "");
               setEditMode(true);
             }}>
-              {yorum ? "✏️ Düzenle" : "📝 Yorum Yaz"}
+              {yorum ? "🖊️ Düzenle" : "📃 Yorumun"}
             </button>
             {yorum && (
               <button onClick={handleDelete} style={{ marginLeft: '10px' }}>
