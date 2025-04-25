@@ -6,16 +6,15 @@ body {
 }
 
 .movie-card {
-  background-color: #b3d0fd; /* yeni arka plan */
+  background-color: #fff;
   border: 0;
-  box-shadow: 0 -1px 0 #91b8f5, 0 0 2px rgba(0, 0, 0, 0.1),
-    0 2px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 -1px 0 #e0e0e0, 0 0 2px rgba(0, 0, 0, 0.12),
+    0 2px 4px rgba(0, 0, 0, 0.24);
   padding: 1rem;
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
-  border-radius: 12px;
-  color: #0a2c5f; /* içerik kontrastı için koyu mavi metin */
+
 }
 
 a {
