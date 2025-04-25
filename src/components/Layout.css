@@ -27,7 +27,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
-  background: linear-gradient(135deg, #dbeeff, #f0f6ff);
+  background: 'linear-gradient(135deg, rgb(218, 232, 247), rgb(214, 229, 247))';
   height: 60px;
   box-shadow: 0 2px 5px rgba(132, 190, 255, 0.2);
 }
